@@ -1,4 +1,9 @@
 const express = require('express');
+require('dotenv').config()
 const app = express();
-app.get('/', (req, res) => res.send('Hi! mister Robot'));
-app.listen(4000, () => console.log('запущено приложение на порту 4000'))
+const port = process.env.PORT || 4000;
+app.get('/', (req, res) => res.send('Hello World!!!'));
+
+app.listen(port, () =>
+  console.log(`Server running at http://localhost:${port}`)
+);
